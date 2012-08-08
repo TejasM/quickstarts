@@ -1,0 +1,12 @@
+<web-app version="3.0"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+         http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+	<persistence-context-ref>
+		<persistence-context-ref-name>kitchensink/em</persistence-context-ref-name>
+		<persistence-unit-name>testPU</persistence-unit-name>
+	</persistence-context-ref>
+
+</web-app>
