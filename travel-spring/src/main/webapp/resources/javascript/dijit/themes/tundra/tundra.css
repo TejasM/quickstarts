@@ -15,7 +15,6 @@
 */
 @import url("../dijit.css");
 @import url("Common.css");
-
 @import url("layout/ContentPane.css");
 @import url("layout/TabContainer.css");
 @import url("layout/AccordionContainer.css");
@@ -36,8 +35,7 @@
 @import url("Menu.css");
 @import url("Editor.css");
 @import url("ColorPalette.css");
-
-/* RTL files */
+    /* RTL files */
 @import url("../dijit_rtl.css");
 @import url("Calendar_rtl.css");
 @import url("Dialog_rtl.css");

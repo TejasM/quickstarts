@@ -1,1 +1,1 @@
-({"set":"Festlegen","text":"Beschreibung:","insertImageTitle":"Grafikeigenschaften","url":"URL:","createLinkTitle":"Linkeigenschaften"})
+({"set": "Festlegen", "text": "Beschreibung:", "insertImageTitle": "Grafikeigenschaften", "url": "URL:", "createLinkTitle": "Linkeigenschaften"})

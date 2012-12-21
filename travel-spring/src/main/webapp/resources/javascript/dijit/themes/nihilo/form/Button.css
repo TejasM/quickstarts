@@ -1,4 +1,3 @@
-
 /*****
 		dijit.form.Button
 		dijit.form.DropDownButton
@@ -7,39 +6,39 @@
  *****/
 
 .nihilo .dijitButtonNode {
-	/* enabled state - inner */
-	/* border:1px outset #a0a0a0; */
-	border:1px solid #dedede;
-	border-bottom:1px solid #dedede;
-	padding: 0.1em 0.2em 0.2em 0.2em; 
-	background: #fff url("../images/buttonEnabled.png") repeat-x top left;
+    /* enabled state - inner */
+    /* border:1px outset #a0a0a0; */
+    border: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+    padding: 0.1em 0.2em 0.2em 0.2em;
+    background: #fff url("../images/buttonEnabled.png") repeat-x top left;
 }
 
-.nihilo .dijitButtonNode button { 
-	border: 0px; 
-	background-color: transparent; 
-} 
- 
+.nihilo .dijitButtonNode button {
+    border: 0px;
+    background-color: transparent;
+}
+
 .nihilo .dijitButtonText {
-	text-align: center; 
-	padding: 0 0.3em;
+    text-align: center;
+    padding: 0 0.3em;
 }
 
 .nihilo .dijitComboBox .dijitButtonNode {
-	border-width: 0px 0px 0px 1px;
+    border-width: 0px 0px 0px 1px;
 }
 
 .nihilo .dijitArrowButton {
-	color: #111;
+    color: #111;
 }
 
 .nihilo .dijitComboButton .dijitDownArrowButton {
-	padding-right:4px;
+    padding-right: 4px;
 }
 
 .dj_ff2 .nihilo .dijitComboButton .dijitButtonContentsFocused,
 .dj_ff2 .nihilo .dijitComboButton .dijitDownArrowButtonFocused {
-	border: 1px black dotted !important;
+    border: 1px black dotted !important;
 }
 
 .nihilo .dijitButtonDisabled .dijitButtonNode,
@@ -49,10 +48,10 @@
 .nihilo .dijitComboBoxDisabled,
 .nihilo .dijitSpinnerDisabled,
 .nihilo .dijitSpinnerDisabled .dijitButtonNode {
-	/* disabled state - inner */
-	border-color: #dedede;
-	background:#fafafa url("../images/buttonDisabled.png") top repeat-x;
-	opacity: 0.60; /* Safari, Opera and Mozilla */
+    /* disabled state - inner */
+    border-color: #dedede;
+    background: #fafafa url("../images/buttonDisabled.png") top repeat-x;
+    opacity: 0.60; /* Safari, Opera and Mozilla */
 }
 
 .nihilo .dijitButtonHover .dijitButtonNode,
@@ -64,10 +63,10 @@
 .nihilo .dijitComboBoxHover .dijitDownArrowButton,
 .nihilo .dijitSpinnerUpArrowHover .dijitUpArrowButton,
 .nihilo .dijitSpinnerDownArrowHover .dijitDownArrowButton {
-	/* hover state - inner */
-	/* TODO: change from Hover to Selected so that button is still highlighted while drop down is being used */
-	color:#243C5F;
-	background:#fcfcfc url("../images/buttonHover.png") repeat-x top left;
+    /* hover state - inner */
+    /* TODO: change from Hover to Selected so that button is still highlighted while drop down is being used */
+    color: #243C5F;
+    background: #fcfcfc url("../images/buttonHover.png") repeat-x top left;
 }
 
 .nihilo .dijitSpinnerUpArrowActive .dijitUpArrowButton,
@@ -78,27 +77,29 @@
 .nihilo .dijitComboButtonActive .dijitButtonContents,
 .nihilo .dijitDownArrowActive .dijitDownArrowButton,
 .nihilo .dijitComboBoxActive .dijitDownArrowButton {
-	/* active state - inner (for when you are pressing a normal button, or
-	 * when a toggle button is in a depressed state
-	 */
-	border-color:#dedede;
-	background: #f5f5f5 url("../images/buttonActive.png") top left repeat-x;
+    /* active state - inner (for when you are pressing a normal button, or
+     * when a toggle button is in a depressed state
+     */
+    border-color: #dedede;
+    background: #f5f5f5 url("../images/buttonActive.png") top left repeat-x;
 }
-
 
 .nihilo .dijitArrowButtonInner {
-	background:url("../images/spriteArrows.png") no-repeat left top;
-	width: 11px;
+    background: url("../images/spriteArrows.png") no-repeat left top;
+    width: 11px;
 }
-.nihilo .dijitUpArrowButton .dijitArrowButtonInner { 
-	background:url("../images/spriteArrows.png") no-repeat -22px top; 
-	width: 11px;
+
+.nihilo .dijitUpArrowButton .dijitArrowButtonInner {
+    background: url("../images/spriteArrows.png") no-repeat -22px top;
+    width: 11px;
 }
+
 .dj_ie6 .nihilo .dijitArrowButtonInner {
-	background:url("../images/spriteArrows.gif") no-repeat left top;
-	width: 11px;
+    background: url("../images/spriteArrows.gif") no-repeat left top;
+    width: 11px;
 }
+
 .dj_ie6 .nihilo .dijitUpArrowButton .dijitArrowButtonInner {
-	background:url("../images/spriteArrows.gif") no-repeat -22px top;
-	width: 11px;
+    background: url("../images/spriteArrows.gif") no-repeat -22px top;
+    width: 11px;
 }

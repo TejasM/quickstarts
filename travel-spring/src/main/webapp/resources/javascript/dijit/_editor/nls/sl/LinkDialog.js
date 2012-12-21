@@ -1,1 +1,1 @@
-({"set":"Nastavi","text":"Opis:","insertImageTitle":"Lastnosti slike","url":"URL:","createLinkTitle":"Lastnosti povezave"})
+({"set": "Nastavi", "text": "Opis:", "insertImageTitle": "Lastnosti slike", "url": "URL:", "createLinkTitle": "Lastnosti povezave"})
