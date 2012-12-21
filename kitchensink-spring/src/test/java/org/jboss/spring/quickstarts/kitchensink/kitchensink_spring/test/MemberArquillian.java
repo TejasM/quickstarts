@@ -32,7 +32,7 @@ public class MemberArquillian {
 	
     @Deployment
     public static WebArchive createTestArchive() {
-        return ShrinkWrap.create(WebArchive.class, "spring-test.war")
+        WebArchive archive =  ShrinkWrap.create(WebArchive.class, "spring-test.war")
                 .addPackage(MemberDao.class.getPackage())
                 .addPackage(Member.class.getPackage())
                 .addPackage(MemberController.class.getPackage())
@@ -42,6 +42,7 @@ public class MemberArquillian {
                 .addAsResource("import.sql")
                 .addAsResource("META-INF/test-persistence-arq.xml", "META-INF/persistence.xml")
                 .addAsLibraries(springDependencies());
+        return archive;
     }
 
     /**
