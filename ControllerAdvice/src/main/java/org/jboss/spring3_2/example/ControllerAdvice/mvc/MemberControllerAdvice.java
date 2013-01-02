@@ -1,6 +1,10 @@
 package org.jboss.spring3_2.example.ControllerAdvice.mvc;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.jboss.spring3_2.example.ControllerAdvice.domain.Member;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -17,7 +21,9 @@ public class MemberControllerAdvice {
 	
 	@InitBinder
 	public void binder(WebDataBinder dataBinder, WebRequest request){
-		dataBinder.registerCustomEditor(Member.class, "name",new PropertyEditor());
+		SimpleDateFormat format = new SimpleDateFormat("dd-MMM-yyyy");
+		format.setLenient(false);
+		dataBinder.registerCustomEditor(Date.class, new CustomDateEditor(format, true));
 	}
 }
 

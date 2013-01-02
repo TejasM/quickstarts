@@ -43,7 +43,11 @@
 								<td><form:input path="phoneNumber"/></td>
 								<td><form:errors class="invalid" path="phoneNumber"/></td>
 							</tr>
-	
+							<tr>
+								<td><form:label path="date">Join Date:</form:label>
+								<td><form:input path="date"/></td>
+								<td><form:errors class="invalid" path="date"/></td>
+							</tr>	
 						</tbody>
 					</table>
 					<table>
