@@ -71,6 +71,7 @@
 									<th>Name</th>
 									<th>Email</th>
 									<th>Phone #</th>
+									<th>Date Created</th>
 									<th>REST URL</th>
 								</tr>
 							</thead>
@@ -81,6 +82,7 @@
 										<td>${member.name}</td>
 										<td>${member.email}</td>
 										<td>${member.phoneNumber}</td>
+										<td>${member.date}</td>
 										<td><a href="<c:url value="/rest/members/${member.id}"/>">/rest/members/${member.id}</a></td>
 								</c:forEach>
 							</tbody>

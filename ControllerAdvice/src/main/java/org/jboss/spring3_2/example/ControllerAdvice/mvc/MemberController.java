@@ -23,7 +23,6 @@ public class MemberController
     public String displaySortedMembers(Model model)
     {
         model.addAttribute("newMember", new Member());
-        model.addAttribute("members", memberDao.findAllOrderedByName());
         return "index";
     }
 
@@ -35,7 +34,6 @@ public class MemberController
             return "redirect:/";
         }
         else {
-            model.addAttribute("members", memberDao.findAllOrderedByName());
             return "index";
         }
     }
