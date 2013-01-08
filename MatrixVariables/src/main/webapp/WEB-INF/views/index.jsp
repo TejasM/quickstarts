@@ -21,7 +21,9 @@
 		function filter() {					
 			jq(function() {
 				var inputs = jq('#filter :input');
-				jq.get("/MatrixVariables" + inputs[0].value+ ";e=" + inputs[1].value, function(data) {});
+				jq.get("filter;n=" + inputs[0].value+ ";e=" + inputs[1].value, function(data) {
+					jq("#membersTable").replaceWith(data);
+				});
 			});
 		}
 		</script>
@@ -71,7 +73,7 @@
 				</form:form>
 				
 				<h2>Filter</h2>
-				<form:form commandName="newMember" id="filter" >
+				<form:form commandName="newMember" id="filter" onclick="return false;">
 					<h2>Member Search Filter</h2>
 					<table>
 						<tbody>
@@ -102,7 +104,7 @@
 						<em>No registered members.</em>
 					</c:when>
 					<c:otherwise>
-						<table class="simpletablestyle">
+						<table id="membersTable" class="simpletablestyle">
 							<thead>
 								<tr>
 									<th>Id</th>
