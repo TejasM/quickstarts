@@ -9,23 +9,22 @@
 		<link rel="stylesheet" type="text/css" href="<c:url value="/static/resources/css/screen.css"/>"/>
 		<script type="text/javascript"
 			src="resources/js/jquery/jquery-1.8.2.min.js"></script>
-		<script type="text/javascript">
-			var jq = jQuery.noConflict();
-		</script>
 	</head>
 
 	<body>
 	
 		<script type="text/javascript">
-		
-		function filter() {					
-			jq(function() {
-				var inputs = jq('#filter :input');
-				jq.get("filter;n=" + inputs[0].value+ ";e=" + inputs[1].value, function(data) {
-					jq("#membersTable").replaceWith(data);
+		$(document).ready(
+			function () {		
+				$("input#filter").click(function(event) {
+					event.preventDefault();
+					var inputs = $('form#filter :input');					
+					$.get("filter;n=" + inputs[0].value+ ";e=" + inputs[1].value, function(data) {
+						$('body').html(data);						
+					});
 				});
-			});
-		}
+			}
+		);
 		</script>
 		<div id="container">
 			<div class="dualbrand">
@@ -73,7 +72,7 @@
 				</form:form>
 				
 				<h2>Filter</h2>
-				<form:form commandName="newMember" id="filter" onclick="return false;">
+				<form:form commandName="newMember" id="filter">
 					<h2>Member Search Filter</h2>
 					<table>
 						<tbody>
@@ -92,7 +91,7 @@
 					<table>
 						<tr>
 							<td>
-								<input type="submit" value="Filter" onclick="filter()"/>
+								<input type="submit" value="Filter" id="filter"/>
 							</td>
 						</tr>
 					</table>

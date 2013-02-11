@@ -32,11 +32,14 @@ public class MemberController
         return "index";
     }
     
+
     @RequestMapping( value="/{filter}", method=RequestMethod.GET)
     public ModelAndView filteredMembers(@MatrixVariable(required=false, defaultValue="") String n, @MatrixVariable(required=false, defaultValue="") String e)
     {
     	ModelAndView model = new ModelAndView("index");
-        model.addObject("newMember", new Member());
+    	System.out.println(n);
+    	System.out.println(e);
+    	model.addObject("newMember", new Member());
         List<Member> members =  memberDao.findAllOrderedByName();
         List<Member> toRemove = new ArrayList<Member>();
         for (Member member : members) {
@@ -45,7 +48,8 @@ public class MemberController
 			}
 		}
         members.removeAll(toRemove);
-        model.addObject("members",members);
+        model.addObject("members", members);
+
         return model;
     }
 
