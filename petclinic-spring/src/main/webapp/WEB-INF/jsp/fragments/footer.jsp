@@ -14,26 +14,14 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<!DOCTYPE html>
-
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<table class="footer">
+    <tr>
+        <td></td>
+        <td align="right"><img src="<spring:url value="/resources/images/springsource-logo.png" htmlEscape="true" />"
+                               alt="Sponsored by SpringSource"/></td>
+    </tr>
+</table>
 
 
-<html lang="en">
-
-<jsp:include page="fragments/headTag.jsp"/>
-
-<body>
-<div class="container">
-    <jsp:include page="fragments/bodyHeader.jsp"/>
-    <h2><fmt:message key="welcome"/></h2>
-    <spring:url value="/resources/images/pets.png" htmlEscape="true" var="petsImage"/>
-    <img src="${petsImage}"/>
-
-    <jsp:include page="fragments/footer.jsp"/>
-
-</div>
-</body>
-
-</html>

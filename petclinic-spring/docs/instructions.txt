@@ -1,6 +1,0 @@
-The petclinic example is designed to be able to run on Apache Tomcat as well as the JBoss Application Servers 5 and 7.
-
-To run the example on these different servers, different application profiles must be selected, as indicated below:
-
-	- Apache Tomcat - ews-tomcat5 or ews-tomcat6
-	- JBoss EAP 6/AS 7 - eap

@@ -1,0 +1,107 @@
+<html><head><title>README</title><link href="https://raw.github.com/pmuir/github-flavored-markdown/gh-pages/shared/css/documentation.css" rel="stylesheet"></link><link href="https://raw.github.com/github/github-flavored-markdown/gh-pages/shared/css/pygments.css" rel="stylesheet"></link></head><body><h1 id="toc_0">petclinic-spring: PetClinic Example using Spring 3.1</h1>
+
+<p>Author: Ken Krebs, Juergen Hoeller, Rob Harrop, Costin Leau, Sam Brannen, Scott Andrews
+Level: Advanced
+Technologies: JPA 2.0, Junit, JMX, Spring MVC Annotations, Spring Data, Thymeleaf, webjars, and Dandellion
+Summary: An example that incorporates multiple technologies in JBoss Enterprise Application Platform 6 or JBoss AS 7.
+Target Product: EAP
+Source: <a href="https://github.com/jboss-jdf/jboss-as-quickstart/">https://github.com/jboss-jdf/jboss-as-quickstart/</a></p>
+
+<h2 id="toc_1">What is it?</h2>
+
+<p>PetClinic features alternative DAO implementations and application
+configurations for JDBC, JPA, and Spring Data JPA, with HSQLDB and MySQL as
+target databases. The default PetClinic configuration is JDBC on HSQLDB.
+See &ldquo;src/main/resources/spring/data-access.properties&rdquo; as well as web.xml and
+business-config.xml in the &ldquo;src/main/resources/spring&rdquo; folder for
+details. A simple comment change in web.xml switches between the data
+access strategies.</p>
+
+<p>The JDBC and JPA versions of PetClinic also demonstrate JMX support
+via the use of <a href="context:mbean-export/">context:mbean-export/</a> for exporting MBeans.
+SimpleJdbcClinic exposes the SimpleJdbcClinicMBean management interface
+via JMX through the use of the @ManagedResource and @ManagedOperation
+annotations; whereas, the HibernateStatistics service is exposed via JMX
+through auto-detection of the service MBean. You can start up the JDK&#39;s
+JConsole to manage the exported bean.</p>
+
+<p>All data access strategies can work with JTA for transaction management by
+activating the JtaTransactionManager and a JndiObjectFactoryBean that
+refers to a transactional container DataSource. The default for JDBC is
+DataSourceTransactionManager and for JPA and Spring Data JPA, JpaTransactionManager. Those local strategies allow for working
+with any locally defined DataSource.</p>
+
+<p><em>Note that the sample configurations for JDBC, JPA, and Spring Data JPA configure
+a BasicDataSource from the Apache Commons DBCP project for connection
+pooling.</em></p>
+
+<h2 id="toc_2">System requirements</h2>
+
+<p>All you need to build this project is Java 6.0 (Java SDK 1.6) or better, Maven 3.0 or better.</p>
+
+<h2 id="toc_3">Configure Maven</h2>
+
+<p>If you have not yet done so, you must <a href="../README.html#mavenconfiguration">Configure Maven</a> before testing the quickstarts.</p>
+
+<h2 id="toc_4">Start JBoss Enterprise Application Platform 6 or JBoss AS 7 with the Web Profile</h2>
+
+<ol>
+<li>Open a command line and navigate to the root of the JBoss server directory.</li>
+<li><p>The following shows the command line to start the server with the web profile:</p>
+<div class="highlight"><pre><span class="n">For</span> <span class="n">Linux</span><span class="o">:</span>   <span class="n">JBOSS_HOME</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">standalone</span><span class="p">.</span><span class="n">sh</span>
+<span class="n">For</span> <span class="n">Windows</span><span class="o">:</span> <span class="n">JBOSS_HOME</span><span class="err">\</span><span class="n">bin</span><span class="err">\</span><span class="n">standalone</span><span class="p">.</span><span class="n">bat</span>
+</pre></div></li>
+</ol>
+
+<h2 id="toc_5">Build and Deploy the Quickstart</h2>
+
+<p><em>NOTE: The following build command assumes you have configured your Maven user settings. If you have not, you must include Maven setting arguments on the command line. See <a href="../README.html#buildanddeploy">Build and Deploy the Quickstarts</a> for complete instructions and additional options.</em></p>
+
+<ol>
+<li>Make sure you have started the JBoss Server as described above.</li>
+<li>Open a command line and navigate to the root directory of this quickstart.</li>
+<li><p>Type this command to build and deploy the archive:</p>
+<div class="highlight"><pre><span class="n">mvn</span> <span class="n">clean</span> <span class="n">package</span> <span class="n">jboss</span><span class="o">-</span><span class="n">as</span><span class="o">:</span><span class="n">deploy</span>
+</pre></div></li>
+<li><p>This will deploy <code>petclinic-spring/target/jboss-as-petclinic-spring.war</code> to the running instance of the server.</p></li>
+</ol>
+
+<p>If you don&#39;t have maven configured you can manually copy <code>petclinic-spring/target/jboss-as-petclinic-spring.war</code> to JBOSS_HOME/standalone/deployments.</p>
+
+<p>For MySQL, you&#39;ll need to use the corresponding schema and SQL scripts in
+the &ldquo;db/mysql&rdquo; subdirectory.</p>
+
+<p>In you intend to use a local DataSource, the JDBC settings can be adapted
+in &ldquo;src/main/resources/spring/datasource-config.xml&rdquo;. To use a JTA DataSource, you need
+to set up corresponding DataSources in your Java EE container.</p>
+
+<p><em>Notes on enabling Log4J:</em>
+        Log4J is disabled by default due to issues with JBoss.
+        Uncomment the Log4J listener in &ldquo;WEB-INF/web.xml&rdquo; to enable logging.</p>
+
+<h2 id="toc_6">Access the application</h2>
+
+<p>The application will be running at the following URL: <a href="http://localhost:8080/jboss-as-petclinic-spring/">http://localhost:8080/jboss-as-petclinic-spring/</a>.</p>
+
+<h2 id="toc_7">Undeploy the Archive</h2>
+
+<ol>
+<li>Make sure you have started the JBoss Server as described above.</li>
+<li>Open a command line and navigate to the root directory of this quickstart.</li>
+<li><p>When you are finished testing, type this command to undeploy the archive:</p>
+<div class="highlight"><pre><span class="n">mvn</span> <span class="n">jboss</span><span class="o">-</span><span class="n">as</span><span class="o">:</span><span class="n">undeploy</span>
+</pre></div></li>
+</ol>
+
+<h2 id="toc_8">Run the Quickstart in JBoss Developer Studio or Eclipse</h2>
+
+<p>You can also start the server and deploy the quickstarts from Eclipse using JBoss tools. For more information, see <a href="../README.html#useeclipse">Use JBoss Developer Studio or Eclipse to Run the Quickstarts</a></p>
+
+<h2 id="toc_9">Debug the Application</h2>
+
+<p>Note: Eclipse/JBDS may generate a persistence.xml file in the src/main/resources/META-INF/ directory. In order to avoid errors delete this file.</p>
+
+<p>If you want to debug the source code or look at the Javadocs of any library in the project, run either of the following commands to pull them into your local repository. The IDE should then detect them.</p>
+<div class="highlight"><pre>    <span class="n">mvn</span> <span class="n">dependency</span><span class="o">:</span><span class="n">sources</span>
+    <span class="n">mvn</span> <span class="n">dependency</span><span class="o">:</span><span class="n">resolve</span> <span class="o">-</span><span class="n">Dclassifier</span><span class="o">=</span><span class="n">javadoc</span>
+</pre></div></body></html>

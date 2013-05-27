@@ -14,26 +14,22 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<!DOCTYPE html>
-
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ attribute name="name" required="true" rtexprvalue="true"
+              description="Name of corresponding property in bean object" %>
+<%@ attribute name="label" required="true" rtexprvalue="true"
+              description="Label appears in red color if input is considered as invalid after submission" %>
 
+<spring:bind path="${name}">
+    <c:set var="cssGroup" value="control-group ${status.error ? 'error' : '' }"/>
+    <div class="${cssGroup}">
+        <label class="control-label">${label}</label>
 
-<html lang="en">
-
-<jsp:include page="fragments/headTag.jsp"/>
-
-<body>
-<div class="container">
-    <jsp:include page="fragments/bodyHeader.jsp"/>
-    <h2><fmt:message key="welcome"/></h2>
-    <spring:url value="/resources/images/pets.png" htmlEscape="true" var="petsImage"/>
-    <img src="${petsImage}"/>
-
-    <jsp:include page="fragments/footer.jsp"/>
-
-</div>
-</body>
-
-</html>
+        <div class="controls">
+            <form:input path="${name}"/>
+            <span class="help-inline">${status.errorMessage}</span>
+        </div>
+    </div>
+</spring:bind>
