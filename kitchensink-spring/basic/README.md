@@ -5,7 +5,7 @@ Level: Intermediate
 Technologies: JSP, JPA, JSON, Spring, JUnit
 Summary: An example that incorporates multiple technologies
 Target Product: EAP
-Source: <https://github.com/jboss-jdf/jboss-as-quickstart/>
+Source: <https://github.com/snowdrop/quickstarts/>
 
 What is it?
 -----------
@@ -13,15 +13,15 @@ What is it?
 
 This is your project! It is a sample, deployable Maven 3 project to help you get your foot in the door developing with Java EE 6 on JBoss Enterprise Application Platform 6 or JBoss AS 7.
 
-This project is setup to allow you to create a compliant Java EE 6 application using JSP, JPA 2.0 and Spring 3.2. It includes a persistence unit and some sample persistence and transaction code to introduce you to database access in enterprise Java.
+This project is setup to allow you to create a compliant Java EE 6 application using JSP, JPA 2.0 and Spring 3.2. It includes a persistence unit and some sample persistence and transaction code to introduce you to database access in enterprise Java:
 
-    * In `jboss-as-spring-mvc-context.xml` `<context:component-scan base-package="org.jboss.spring.quickstarts.kitchensink.kitchensink_spring.mvc"/>` and `<mvc:annotation-driven/>` are used to register both the non-rest and rest controllers.
+* In `jboss-as-spring-mvc-context.xml` `<context:component-scan base-package="org.jboss.as.quickstarts.kitchensink.spring.basic.mvc"/>` and `<mvc:annotation-driven/>` are used to register both the non-rest and rest controllers.
 
-    * The controllers map the respective urls to methods using `@RequestMapping(url)`.
+* The controllers map the respective urls to methods using `@RequestMapping(url)`.
 
-    * To return JSON, the rest controller uses `@ResponseBody`.
+* To return JSON, the rest controller uses `@ResponseBody`.
 
-    * The datasource and entitymanager are retrieved via JNDI.
+* The datasource and entitymanager are retrieved via JNDI.
 
 System requirements
 -------------------
@@ -44,7 +44,7 @@ Configure Maven
 Build and Deploy the Quickstart
 -------------------------------
 
-_NOTE: The following build command assumes you have configured your Maven user settings. If you have not, you must include Maven setting arguments on the command line. See [Build and Deploy the Quickstarts](../README.md#buildanddeploy) for complete instructions and additional options._
+_NOTE: The following build command assumes you have configured your Maven user settings. If you have not, you must include Maven setting arguments on the command line. See [Build and Deploy the Quickstarts](../README.md#build-and-deploy-the-quickstarts) for complete instructions and additional options._
 
 1. Make sure you have started the JBoss Server as described above.
 2. Open a command line and navigate to the root directory of this quickstart.
@@ -75,8 +75,7 @@ Or you can manually remove the application by removing jboss-as-kitchensink-spri
 Run the Quickstart in JBoss Developer Studio or Eclipse
 -------------------------------------
 
-You can also start the server and deploy the quickstarts from Eclipse using JBoss tools. For more information, see [Use JBoss Developer Studio or Eclipse to Run the Quickstarts](../README.md#useeclipse)
-
+You can also start the server and deploy the quickstarts from Eclipse using JBoss tools.
 
 Debug the Application
 ---------------------

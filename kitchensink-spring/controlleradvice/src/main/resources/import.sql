@@ -1,5 +1,6 @@
---JBoss, Home of Professional Open Source
--- Copyright 2012, Red Hat, Inc. and/or its affiliates, and individual
+--
+-- JBoss, Home of Professional Open Source
+-- Copyright 2013, Red Hat, Inc. and/or its affiliates, and individual
 -- contributors by the @authors tag. See the copyright.txt in the
 -- distribution for a full listing of individual contributors.
 --
@@ -12,9 +13,9 @@
 -- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 -- See the License for the specific language governing permissions and
 -- limitations under the License.
-
+--
 -- This script initializes the database by creating tables and inserting data
 -- Use only for a proof of concept
 
 -- You can use this file to load seed data into the database using SQL statements
-insert into MemberControllerAdvice (id, name, email, phone_number, date_created) values (0, 'John Smith', 'john.smith@mailinator.com', '2125551212', '12/12/2012')
+insert into MemberControllerAdvice (id, name, email, phone_number, date_created) values (0, 'John Smith', 'john.smith@mailinator.com', '2125551212', '2012-12-31 00:00:00')

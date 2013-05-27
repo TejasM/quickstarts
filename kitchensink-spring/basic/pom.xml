@@ -212,6 +212,9 @@
                 <groupId>org.jboss.as.plugins</groupId>
                 <artifactId>jboss-as-maven-plugin</artifactId>
                 <version>${version.jboss.maven.plugin}</version>
+                <configuration>
+                    <skip>false</skip>
+                </configuration>
             </plugin>
             <!-- Surefire plugin before 2.9 version is buggy -->
             <plugin>

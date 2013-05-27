@@ -23,7 +23,9 @@
     <version>7.1.2-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>JBoss AS Quickstarts: Kitchensink-Spring</name>
-    <description>A starter Java EE 6 webapp project for use on JBoss AS 7 / EAP 6, generated from the spring-mvc-archetype archetype</description>
+    <description>A starter Java EE 6 webapp project for use on JBoss AS 7 / EAP 6, generated from the
+        spring-mvc-archetype archetype
+    </description>
 
     <url>http://jboss.org/jbossas</url>
     <licenses>
@@ -56,15 +58,15 @@
         <!-- Define the version of the JBoss BOMs we want to import to specify tested stacks. -->
         <version.jboss.bom>1.0.5.CR4</version.jboss.bom>
         <!-- Alternatively, comment out the above line, and un-comment the
-            line below to use version 1.0.4.Final-redhat-1 which is a release certified
+            line below to use version 1.0.4.Final-redhat-4 which is a release certified
             to work with JBoss EAP 6. It requires you have access to the JBoss EAP 6
             maven repository. -->
-        <!-- <version.jboss.bom>1.0.4.Final-redhat-1</version.jboss.bom>  -->
+        <!-- <version.jboss.bom>1.0.4.Final-redhat-4</version.jboss.bom>  -->
 
         <!-- maven-compiler-plugin -->
         <maven.compiler.target>1.6</maven.compiler.target>
         <maven.compiler.source>1.6</maven.compiler.source>
-        <version.maven.surefire>2.12</version.maven.surefire>
+        <version.maven.surefire>2.4.3</version.maven.surefire>
         <version.maven.war>2.2</version.maven.war>
         <version.maven.compiler>2.4</version.maven.compiler>
 
@@ -154,6 +156,31 @@
                 <artifactId>slf4j-simple</artifactId>
                 <version>${version.slf4j}</version>
             </dependency>
+            <dependency>
+                <groupId>org.jboss.as.quickstarts</groupId>
+                <artifactId>jboss-as-kitchensink-spring-asyncrequestmapping</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.as.quickstarts</groupId>
+                <artifactId>jboss-as-kitchensink-spring-basic</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.as.quickstarts</groupId>
+                <artifactId>jboss-as-kitchensink-spring-controlleradvice</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.as.quickstarts</groupId>
+                <artifactId>jboss-as-kitchensink-spring-matrixvariables</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.as.quickstarts</groupId>
+                <artifactId>jboss-as-kitchensink-spring-springmvctest</artifactId>
+                <version>${project.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -170,6 +197,75 @@
                         <source>${maven.compiler.source}</source>
                         <target>${maven.compiler.target}</target>
                     </configuration>
+                </plugin>
+                <!-- Deployent on AS from console -->
+                <plugin>
+                    <groupId>org.jboss.as.plugins</groupId>
+                    <artifactId>jboss-as-maven-plugin</artifactId>
+                    <version>${version.jboss.maven.plugin}</version>
+                    <inherited>true</inherited>
+                    <configuration>
+                        <skip>true</skip>
+                    </configuration>
+                    <!--<executions>
+                        <execution>
+                            <id>async</id>
+                            <phase>install</phase>
+                            <goals>
+                                <goal>deploy-artifact</goal>
+                            </goals>
+                            <configuration>
+                                <groupId>org.jboss.as.quickstarts</groupId>
+                                <artifactId>jboss-as-kitchensink-spring-asyncrequestmapping</artifactId>
+                                <name>jboss-as-kitchensink-spring-asyncrequestmapping.war</name>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>basic</id>
+                            <phase>install</phase>
+                            <goals>
+                                <goal>deploy-artifact</goal>
+                            </goals>
+                            <configuration>
+                                <groupId>org.jboss.as.quickstarts</groupId>
+                                <artifactId>jboss-as-kitchensink-spring-basic</artifactId>
+                                <name>jboss-as-kitchensink-spring-basic.war</name>
+                            </configuration>
+                        </execution>-->
+                    <!--<execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>deploy-artifact</goal>
+                        </goals>
+                        <configuration>
+                            <groupId>org.jboss.as.quickstarts</groupId>
+                            <artifactId>jboss-as-kitchensink-spring-asyncrequestmapping</artifactId>
+                            <name>jboss-as-kitchensink-spring-asyncrequestmapping.war</name>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>deploy-artifact</goal>
+                        </goals>
+                        <configuration>
+                            <groupId>org.jboss.as.quickstarts</groupId>
+                            <artifactId>jboss-as-kitchensink-spring-asyncrequestmapping</artifactId>
+                            <name>jboss-as-kitchensink-spring-asyncrequestmapping.war</name>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>deploy-artifact</goal>
+                        </goals>
+                        <configuration>
+                            <groupId>org.jboss.as.quickstarts</groupId>
+                            <artifactId>jboss-as-kitchensink-spring-asyncrequestmapping</artifactId>
+                            <name>jboss-as-kitchensink-spring-asyncrequestmapping.war</name>
+                        </configuration>
+                    </execution>-->
+                    <!--</executions>-->
                 </plugin>
             </plugins>
         </pluginManagement>

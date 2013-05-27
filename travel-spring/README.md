@@ -5,7 +5,7 @@ Level: Advanced
 Technologies: JPA 2.0, Junit, JMX, Spring Security, Spring Webflow, Spring Test, and JSP
 Summary: This example demonstrates the use of JPA 2.0, Junit, JMX, Spring Security, Spring Webflow, Spring Test, and JSP
 Target Product: EAP
-Source: <https://github.com/jboss-jdf/jboss-as-quickstart/>
+Source: <https://github.com/snowdrop/quickstarts/>
 
 What is this?
 -------------
@@ -28,7 +28,13 @@ All you need to build this project is Java 6.0 (Java SDK 1.6) or better, Maven 3
 Configure Maven
 ---------------
 
-If you have not yet done so, you must Configure Maven before testing the quickstarts.
+1. If you have not yet done so, you must Configure Maven before testing the quickstarts.
+2. Start JBoss Enterprise Application Platform 6 or JBoss AS 7 with the Web Profile
+3. Open a command line and navigate to the root of the JBoss server directory.
+4. The following shows the command line to start the server with the web profile:
+
+        For Linux:   JBOSS_HOME/bin/standalone.sh
+        For Windows: JBOSS_HOME\bin\standalone.bat
 
 Start JBoss Enterprise Application Platform 6 or JBoss AS 7 with the Web Profile
 ---------------
@@ -65,7 +71,7 @@ _NOTE: To deploy the project in EWS-Tomcat5/EWS-Tomcat6, you can use `-Pews-tomc
 Access the application
 ----------------------
 
-The application will be running at the following URL: <http://localhost:8080/jboss-as-travel>.
+The application will be running at the following URL: <http://localhost:8080/jboss-as-travel-spring>.
 
 Undeploy the Archive
 --------------------
@@ -81,7 +87,7 @@ Or you can manually remove the application by removing jboss-as-travel-spring.wa
 Run the Quickstart in JBoss Developer Studio or Eclipse
 -------------------------------------------------------
 
-You can also start the server and deploy the quickstarts from Eclipse using JBoss tools. For more information, see [Use JBoss Developer Studio or Eclipse to Run the Quickstarts](../README.md#useeclipse)
+You can also start the server and deploy the quickstarts from Eclipse using JBoss tools.
 
 Debug the Application
 --------------------

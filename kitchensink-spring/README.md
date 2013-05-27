@@ -5,7 +5,7 @@ Level: Intermediate
 Technologies: JSP, JPA, JSON, Spring, JUnit
 Summary: An example that incorporates multiple technologies
 Target Product: EAP
-Source: <https://github.com/jboss-jdf/jboss-as-quickstart/>
+Source: <https://github.com/snowdrop/quickstarts/>
 
 What is it?
 -----------
@@ -18,14 +18,15 @@ All of them use the following setup:
 
 * Setup to allow you to create a compliant Java EE 6 application using JSP, JPA 2.0 and Spring 3.2. A Persistence unit and some sample persistence and transaction code is included to introduce you to database access in enterprise Java.
 
-The basic version show cases the above technologies without any extra features, while the other four versions showcase various Spring 3.2 features as follows:
+The basic version showcases the above technologies without any extra features, while the other four versions showcase various Spring 3.2 features as follows:
 
-_NOTE: Many of the following use cases may seem contrived, that is because they are. The sole purpose of these 4 quickstarts is to showcase Spring 3.2's outstanding new features._
+_NOTE: The following describes the 5 quickstart provided in this example. Many of the following use cases are contrived, but the purpose of the additional quickstarts is to showcase Spring 3.2's outstanding new features._
 
-* AsyncRequestMapping showcases Spring 3.2's Asynchronous Callable Function [More on Spring's Asynchronous Request Processing](<http://static.springsource.org/spring/docs/3.2.x/spring-framework-reference/html/mvc.html#mvc-ann-async>)
-* ControllerAdvice showcases Spring 3.2's new `@ControllerAdvice` which allows the user to configure various aspects such as global exception handler, init binders, and adding global model atrributes
-* MatrixVariables showcases Spring 3.2's added support for Matrix Variables in urls, e.g. http://localhost:8080/something;p=2;q=3. In this quickstart the matrix variables are used for filtering purposes.
-* Spring MVC Test: Adds `MemberMockMVCTest.java` to showcase a use case of `MockMVC` and `RestTemplate` to test the mvc aspect of the application which was previously not possible without external tools such as Arquillian.
+* `basic` - This quickstart showcases the above technologies without any extra features. For more information about the basic quickstart, see the [basic README](basic/README.md) file.
+* `asyncrequestmapping` - This quickstart showcases Spring 3.2's Asynchronous Callable Function [More on Spring's Asynchronous Request Processing](<http://static.springsource.org/spring/docs/3.2.x/spring-framework-reference/html/mvc.html#mvc-ann-async>). For more information about the asyncrequestmapping quickstart, see the [asyncrequestmapping README](asyncrequestmapping/README.md) file.
+* `controlleradvice` - This quickstarts showcases Spring 3.2's new `@ControllerAdvice` which allows the user to configure various aspects such as global exception handler, init binders, and adding global model atrributes. For more information about the controlleradvice quickstart, see the [controlleradvice README](controlleradvice/README.md) file.
+* `matrixvariables` - This quickstarts showcases Spring 3.2's added support for Matrix Variables in urls, e.g. http://localhost:8080/something;p=2;q=3. In this quickstart the matrix variables are used for filtering purposes. For more information about the matrixvariables quickstart, see the [matrixvariables README](matrixvariables/README.md) file.
+* `springmvctest` - This quickstart adds `MemberMockMVCTest.java` to showcase a use case of `MockMVC` and `RestTemplate` to test the mvc aspect of the application which was previously not possible without external tools such as Arquillian. For more information about the springmvctest quickstart, see the [springmvctest README](springmvctest/README.md) file.
 
 System requirements
 -------------------
@@ -48,9 +49,9 @@ Configure Maven
 Build and Deploy the Quickstart
 -------------------------------
 
-_NOTE: The following applies to each of the modules in this project. {module} should be replaced by the respective module that you are working with._
+_NOTE: The following applies to each of the quickstarts in this project. `QUICKSTART_NAME` should be replaced by the respective quickstart that you are working with._
 
-_NOTE: The following build command assumes you have configured your Maven user settings. If you have not, you must include Maven setting arguments on the command line. See [Build and Deploy the Quickstarts](../README.md#buildanddeploy) for complete instructions and additional options._
+_NOTE: The following build command assumes you have configured your Maven user settings. If you have not, you must include Maven setting arguments on the command line. See [Build and Deploy the Quickstarts](../README.md#build-and-deploy-the-quickstarts) for complete instructions and additional options._
 
 1. Make sure you have started the JBoss Server as described above.
 2. Open a command line and navigate to the root directory of this quickstart.
@@ -58,14 +59,20 @@ _NOTE: The following build command assumes you have configured your Maven user s
 
         mvn clean package jboss-as:deploy
 
-4. This will deploy module/target/jboss-as-kitchensink-spring-{module}.war to the running instance of the server.
+4. This will deploy `QUICKSTART_NAME/target/jboss-as-kitchensink-spring-QUICKSTART_NAME.war` to the running instance of the server.
 
-If you don't have maven configured you can manually copy module/target/jboss-as-kitchensink-spring-{module}.war to JBOSS_HOME/standalone/deployments.
+If you don't have maven configured you can manually copy `QUICKSTART_NAME/target/jboss-as-kitchensink-spring-QUICKSTART_NAME.war` to JBOSS_HOME/standalone/deployments.
 
-Access the application
-----------------------
+Access the applications
+-----------------------
 
-The application will be running at the following URL: http://localhost:8080/jboss-as-kitchensink-spring-{module}/.
+The applications will be running at the following URLs:
+
+* <http://localhost:8080/jboss-as-kitchensink-spring-basic/>
+* <http://localhost:8080/jboss-as-kitchensink-spring-asyncrequestmapping/>
+* <http://localhost:8080/jboss-as-kitchensink-spring-controlleradvice/>
+* <http://localhost:8080/jboss-as-kitchensink-spring-matrixvariables/>
+* <http://localhost:8080/jboss-as-kitchensink-spring-springmvctest/>
 
 Undeploy the Archive
 ----------------------
@@ -76,12 +83,12 @@ Undeploy the Archive
 
         mvn jboss-as:undeploy
 
-Or you can manually remove the application by removing jboss-as-kitchensink-spring-{module}.war from JBOSS_HOME/standalone/deployments
+Or you can manually remove the application by removing `jboss-as-kitchensink-spring-QUICKSTART_NAME.war` from JBOSS_HOME/standalone/deployments
 
 Run the Quickstart in JBoss Developer Studio or Eclipse
 -------------------------------------
 
-You can also start the server and deploy the quickstarts from Eclipse using JBoss tools. For more information, see [Use JBoss Developer Studio or Eclipse to Run the Quickstarts](../README.md#useeclipse)
+You can also start the server and deploy the quickstarts from Eclipse using JBoss tools.
 
 
 Debug the Application
